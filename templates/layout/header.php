@@ -1,60 +1,78 @@
 <div class="header">
     <div class="header__top">
-        <div class="header__slogan">
-            <!--  -->
-            <div class="marquee">
-                <div>
-                    <span>
-                        <?=$sloganheader['name'.$lang]?>
-                    </span>
+        <div class="wrapper">
+            <div class="header__topp">
+                <div class="header__top--left">
+                    <div class="header__info">
+                        <div>
+                            <img src="assets/images/images/icon-address.png" alt="<?=$setting['name'.$lang]?>">
+                        </div>
+                        <span>
+                            <?=$optsetting['address']?>
+                        </span>
+                    </div>
+                </div>
+                <div class="header__top--right">
+                    <div class="header__info">
+                        <div>
+                            <img src="assets/images/images/icon-email.png" alt="<?=$setting['name'.$lang]?>">
+                        </div>
+                        <span>
+                            <?=$optsetting['email']?>
+                        </span>
+                    </div>
+                    <div class="social__header">
+                        <div class="social__headerr">
+                            <span>Follow us: </span>
+                            <div class="social__list">
+                                <?php if(!empty($socialheader)){
+                            foreach($socialheader as $v){?>
+                                <a href="<?=$v['link']?>" class="social__item">
+                                    <div>
+                                        <?=$func->getImage(['sizes' => '28x28x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $v['photo'], 'alt' => $setting['name'.$lang]])?>
+                                    </div>
+                                </a>
+                                <?php }}?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="wrapper">
-        <div class="header__bg--logo">
-            <img src="assets/images/images/bg-logo01.png" alt="">
-        </div>
-        <div class="header__logo">
-            <a href="" title="<?=trangchu?>" class="peShiner">
-                <?=$func->getImage(['sizes' => '180x96x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $logo['photo'], 'alt' => $setting['name'.$lang]])?>
-            </a>
-        </div>
-        <div class="header__buttom">
-            <div class="header__info-item">
+    <div class="header__bottom">
+        <div class="wrapper">
+            <div class="header__logo">
+                <a href="" title="<?=trangchu?>">
+                    <?=$func->getImage(['sizes' => '130x102x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $logo['photo'], 'alt' => $setting['name'.$lang]])?>
+                </a>
+            </div>
+            <div class="header__right">
+                <div class="header__info-item">
 
-            </div>
-            <div class="header__info-item">
-                <div class="header__banner">
-                    <?=$func->getImage(['sizes' => '444x87x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $bannerheader['photo'], 'alt' => $setting['name'.$lang]])?>
                 </div>
-            </div>
-            <div class="header__info-item">
-                <div class="header__open">
-                    <div class="header__open--time">
-                        <div class="header__icon">
-                            <img src="assets/images/images/icon-open.png" alt="<?=$setting['name'.$lang]?>">
-                        </div>
-                        <?php if(!empty($opentime)){?>
-                        <span>
-                            Mở cửa: <?=$opentime['name'.$lang]?>
-                        </span>
-                        <?php }?>
+                <div class="header__info-item">
+                    <div class="header__banner">
+                        <?=$func->getImage(['sizes' => '480x80x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $bannerheader['photo'], 'alt' => $setting['name'.$lang]])?>
                     </div>
+                </div>
+                <div class="header__info-item">
                     <div class="header__hotline">
                         <div class="header__icon">
-                            <img src="assets/images/images/icon-phone.png" alt="<?=$setting['name'.$lang]?>">
+                            <img src="assets/images/images/icon-hotline.png" alt="<?=$setting['name'.$lang]?>">
                         </div>
-                        <span>
-                            Hotline:
-                        </span>
-                        <a
-                            href="tel:<?=$func->formatPhone($optsetting['phone'])?>"><?=$func->formatPhone($optsetting['phone'])?></a>
+                        <div class="header__hotline--right">
+                            <span>
+                                liên hệ tư vấn:
+                            </span>
+                            <a href="tel:<?=$func->formatPhone($optsetting['phone'])?>"><?=$func->formatPhone($optsetting['phone'])?>
+                            </a>
+                            <a href="tel:<?=$func->formatPhone($optsetting['hotline'])?>"><?=$func->formatPhone($optsetting['hotline'])?>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
-
 </div>

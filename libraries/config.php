@@ -18,12 +18,12 @@
 		'arrayDomainSSL' => array(),
 		'database' => array(
 			'server-name' => $_SERVER["SERVER_NAME"],
-			'url' => '/2022/source_company/12/nguyencaosu_2404822w/', // Thay
+			'url' => '/2023/01/satthep_nguyenthithuhien_2432822w/', // Thay
 			'type' => 'mysql',
 			'host' => 'localhost',
 			'username' => 'root',
 			'password' => '',
-			'dbname' => '2022-12_nguyencaosu_2404822w',//Thay
+			'dbname' => '2023-01_nguyenthithuhien_2432822w',//Thay
 			'port' => 3306,
 			'prefix' => 'table_',
 			'charset' => 'utf8mb4'

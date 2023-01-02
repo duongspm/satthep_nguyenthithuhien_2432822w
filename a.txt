@@ -1,0 +1,15 @@
+news
+	tieuchi ???
+	blog 380x280
+	chinh sach
+newsletter
+
+photo
+	social header ?? 28x28
+	logo
+	banner 480x80
+	slide 1366x536
+product
+	sp 1 cap
+static
+	about

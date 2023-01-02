@@ -12,7 +12,7 @@
         include TEMPLATE . LAYOUT . "seo.php";
         include TEMPLATE . LAYOUT . "header.php";
         include TEMPLATE . LAYOUT . "menu.php";
-        include TEMPLATE.LAYOUT."mmenu.php";
+        // include TEMPLATE.LAYOUT."mmenu.php";
         if ($source == 'index') include TEMPLATE . LAYOUT . "slide.php";
         else include TEMPLATE . LAYOUT . "breadcrumb.php";
         ?>
@@ -21,9 +21,9 @@
         </div>
         <?php
         include TEMPLATE . LAYOUT . "footer.php";
-        include TEMPLATE . LAYOUT . "modal.php";
+        // include TEMPLATE . LAYOUT . "modal.php";
         include TEMPLATE . LAYOUT . "js.php";
-        if($deviceType=='mobile') include TEMPLATE.LAYOUT."phone.php";
+        // if($deviceType=='mobile') include TEMPLATE.LAYOUT."phone.php";
         ?>
     </div>
 

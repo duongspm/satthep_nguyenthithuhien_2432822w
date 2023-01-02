@@ -3,11 +3,14 @@ if (!defined('SOURCES')) die("Error");
 
 /* Query allpage */
 // need
+$socialfooter = $cache->get("select name$lang, photo, link from #_photo where type = ? and find_in_set('hienthi',status) order by numb,id desc", array('social-footer'), 'result', 7200);
+
+$socialheader = $cache->get("select photo, link from #_photo where type = ? and find_in_set('hienthi',status) order by numb,id desc", array('social-header'), 'result', 7200);
+
 $product = $cache->get("select id from #_product where type = ? and find_in_set('noibat',status) and find_in_set('hienthi',status)", array('san-pham'), 'result', 7200);
 
 $favicon = $cache->get("select photo from #_photo where type = ? and act = ? and find_in_set('hienthi',status) limit 0,1", array('favicon', 'photo_static'), 'fetch', 7200);
 
-$social = $cache->get("select name$lang, photo, link from #_photo where type = ? and find_in_set('hienthi',status) order by numb,id desc", array('social'), 'result', 7200);
 
 $sloganheader = $cache->get("select name$lang from #_static where type = ? limit 0,1", array('slogan-header'), 'fetch', 7200);
 

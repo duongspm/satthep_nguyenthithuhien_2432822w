@@ -95,17 +95,11 @@ $requick = array(
 	array("tbl" => "product_list", "field" => "idl", "source" => "product", "com" => "san-pham", "type" => "san-pham"),
 	array("tbl" => "product", "field" => "id", "source" => "product", "com" => "san-pham", "type" => "san-pham", "menu" => true),
 
-	/* Video */
-	array("tbl" => "photo", "field" => "id", "source" => "video", "com" => "video", "type" => "video", "menu" => true),
-	
 	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc", "menu" => true),
 
 	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "dich-vu", "type" => "dich-vu", "menu" => true),
 	
 	array("tbl" => "news_list", "field" => "idl", "source" => "news", "com" => "dich-vu", "type" => "dich-vu", "menu" => true),
-
-	/* Thư viện ảnh */
-	array("tbl" => "product", "field" => "id", "source" => "product", "com" => "thu-vien-anh", "type" => "thu-vien-anh", "menu" => true),
 
 	/* Trang tĩnh */
 	array("tbl" => "static", "field" => "id", "source" => "static", "com" => "gioi-thieu", "type" => "gioi-thieu", "menu" => true),
@@ -202,22 +196,6 @@ switch ($com) {
 		$table = $urlTblTag;
 		$seo->set('type', 'object');
 		$titleMain = null;
-		break;
-
-	case 'thu-vien-anh':
-		$source = "product";
-		$template = isset($_GET['id']) ? "album/album_detail" : "album/album";
-		$seo->set('type', isset($_GET['id']) ? "article" : "object");
-		$type = $com;
-		$titleMain = thuvienanh;
-		break;
-
-	case 'video':
-		$source = "video";
-		$template = "video/video";
-		$type = $com;
-		$seo->set('type', 'object');
-		$titleMain = "Video";
 		break;
 
 

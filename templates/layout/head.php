@@ -1,13 +1,13 @@
 <!-- Basehref -->
-<base href="<?=$configBase?>"/>
+<base href="<?=$configBase?>" />
 
 <!-- UTF-8 -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <!-- Title, Keywords, Description -->
 <title><?=$seo->get('title')?></title>
-<meta name="keywords" content="<?=$seo->get('keywords')?>"/>
-<meta name="description" content="<?=$seo->get('description')?>"/>
+<meta name="keywords" content="<?=$seo->get('keywords')?>" />
+<meta name="description" content="<?=$seo->get('description')?>" />
 
 <!-- Robots -->
 <meta name="robots" content="index,follow" />
@@ -57,4 +57,4 @@
 <meta name="format-detection" content="telephone=no">
 
 <!-- Viewport -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=1349">
