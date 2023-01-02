@@ -1,5 +1,6 @@
+
 news
-	tieuchi ???
+	tieuchi
 	blog 380x280
 	chinh sach
 newsletter
@@ -13,3 +14,9 @@ product
 	sp 1 cap
 static
 	about
+	hỗ trợ trực tuyến ->
+	slogan 
+	
+	tài khoảng ngân hàng
+
+footer tự nhập

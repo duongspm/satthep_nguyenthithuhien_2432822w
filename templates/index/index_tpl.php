@@ -1,30 +1,25 @@
-<div class="prolist">
+<div class="prolistnb">
     <div class="wrapper">
         <div class="prolistt">
-            <div class="owl-page owl-carousel owl-theme" data-xsm-items="1:0" data-sm-items="1:0" data-md-items="2:0"
-                data-lg-items="3:0" data-xlg-items="3:0" data-rewind="1" data-autoplay="0" data-loop="0"
+            <div class="owl-page owl-carousel owl-theme" data-xsm-items="3:20" data-sm-items="3:20" data-md-items="3:20"
+                data-lg-items="3:20" data-xlg-items="3:20" data-rewind="1" data-autoplay="0" data-loop="0"
                 data-lazyload="0" data-mousedrag="1" data-touchdrag="1" data-smartspeed="500" data-autoplayspeed="3500"
                 data-dots="0" data-nav="0"
                 data-navtext="<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-left' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='5' y1='12' x2='9' y2='16' /><line x1='5' y1='12' x2='9' y2='8' /></svg>|<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-right' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='15' y1='16' x2='19' y2='12' /><line x1='15' y1='8' x2='19' y2='12' /></svg>"
                 data-navcontainer=".control-partner">
-                <?php if(!empty($prolist)) {
-                foreach($prolist as $v){?>
-                <div class="prolist__item">
-                    <div class="prolist__item--icon">
-                        <?= $func->getImage(['class' => 'lazy', 'sizes' => '55x51x1', 'upload' => UPLOAD_NEWS_L, 'image' => $v['photo'], 'alt' => $v['name'.$lang]]) ?>
-                    </div>
-                    <div class="prolist__content">
+                <?php if(!empty($productlistnb)) {
+                foreach($productlistnb as $v){?>
+                <div class="prolistnb__item">
+                    <a href="<?=$v[$sluglang]?>" title="<?=$v['name'.$lang]?>">
+                        <div class="prolistnb__item--img">
+                            <?= $func->getImage(['class' => 'lazy', 'sizes' => '280x280x1', 'upload' => UPLOAD_PRODUCT_L, 'image' => $v['photo'], 'alt' => $v['name'.$lang]]) ?>
+                        </div>
                         <div class="prolist__name">
                             <span>
                                 <?=$v['name'.$lang]?>
                             </span>
                         </div>
-                        <div class="prolist__desc">
-                            <span>
-                                <?=$v['desc'.$lang]?>
-                            </span>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <?php }}?>
             </div>
@@ -64,143 +59,171 @@
         <?php }?>
     </div>
 </div>
+<div class="tieuchi pd">
+    <div class="wrapper">
+        <div class="tieuchii">
+            <div class="owl-page owl-carousel owl-theme" data-xsm-items="4:30" data-sm-items="4:30" data-md-items="4:30"
+                data-lg-items="4:30" data-xlg-items="4:30" data-rewind="1" data-autoplay="0" data-loop="0"
+                data-lazyload="0" data-mousedrag="1" data-touchdrag="1" data-smartspeed="500" data-autoplayspeed="3500"
+                data-dots="0" data-nav="0"
+                data-navtext="<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-left' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='5' y1='12' x2='9' y2='16' /><line x1='5' y1='12' x2='9' y2='8' /></svg>|<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-right' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='15' y1='16' x2='19' y2='12' /><line x1='15' y1='8' x2='19' y2='12' /></svg>"
+                data-navcontainer=".control-partner">
+                <?php if(!empty($tieuchi)) {
+                foreach($tieuchi as $v){?>
+                <div class="tieuchi__item">
+                    <a href="<?=$v[$sluglang]?>" title="<?=$v['name'.$lang]?>">
+                        <div class="tieuchi__item--img">
+                            <?= $func->getImage(['class' => 'lazy', 'sizes' => '55x51x1', 'upload' => UPLOAD_NEWS_L, 'image' => $v['photo'], 'alt' => $v['name'.$lang]]) ?>
+                        </div>
+                        <span class="tieuchi__name cut_string1">
+                            <?=$v['name'.$lang]?>
+                        </span>
+                        <span class="tieuchi__desc cut_string2">
+                            <?=$v['desc'.$lang]?>
+                        </span>
+                        <span class="tieuchi__link">Xem thêm &#10132;</span>
+                    </a>
+                </div>
+                <?php }}?>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="productlist">
     <div class="wrapper">
         <div class="productlistt">
             <div class="danhmucsp">
-
-            </div>
-        </div>
-    </div>
-</div>
-<div class="productnb pd">
-    <div class="wrapper">
-
-        <?php if (!empty($productlist)) { ?>
-        <div class="title-product-list text-center">
-            <?php foreach ($productlist as $key => $vl) : ?>
-            <a class="text-decoration-none a-title-product" data-list="<?= $vl['id'] ?>"><?= $vl['name' . $lang] ?></a>
-            <?php endforeach ?>
-        </div>
-        <?php } ?>
-        <div class="productnb__list">
-            <div class="paging-product-list"></div>
-        </div>
-    </div>
-</div>
-<div>
-    <?php if(!empty($banner)){?>
-    <div class="banner effect10">
-        <?= $func->getImage(['class' => 'lazy', 'sizes' => '1366x300x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $banner['photo'], 'alt' => "about"]) ?>
-    </div>
-    <?php }?>
-</div>
-<div class="videofb pd">
-    <div class="wrapper">
-        <div class="videofbb">
-            <div class="videoo">
-                <div class="heading__02">
-                    <span class="heading--02">
-                        video nổi bật
-                    </span>
-                    <div class="heading__slogan--02">
-                        <span>
-                            <?=$slogan['name'.$lang]?>
-                        </span>
+                <div class="danhmucsp__top">
+                    <div class="danhmucsp__heading">
+                        <span>Danh mục sản phẩm</span>
                     </div>
-                </div>
-                <div class="video__list">
-
-                    <div class="slider-for">
-                        <?php if(!empty($videoclipd)) { foreach($videoclipd as $k => $v) { ?>
-                        <div class="video" data-fancybox="video" data-src="<?=$v['link_video']?>">
-                            <div class="video-image scale-img">
-                                <?= $func->getImage(['class' => 'w-100', 'sizes' => '580x400x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $v['photo'], 'alt' => $v['name'.$lang]]) ?>
-                            </div>
-                        </div>
-                        <?php } }?>
-                    </div>
-
-
-                    <div class="slider-nav">
-                        <?php if(!empty($videoclipd)) { foreach($videoclipd as $k => $v) { ?>
-                        <div class="video" data-fancybox="video" data-src="<?=$v['link_video']?>">
-                            <div class="video-images scale-img">
-                                <?= $func->getImage(['class' => 'w-100', 'sizes' => '180x110x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $v['photo'], 'alt' => $v['name'.$lang]]) ?>
-                            </div>
-                        </div>
-                        <?php } }?>
-                    </div>
-
-                </div>
-            </div>
-            <div class="feedback">
-                <div class="heading__02">
-                    <span class="heading--02">
-                        cảm nhận khách hàng
-                    </span>
-                    <div class="heading__slogan--02">
-                        <span>
-                            <?=$slogan['name'.$lang]?>
-                        </span>
-                    </div>
-                </div>
-                <div class="feedback__list">
-                    <div class="owl-page owl-carousel owl-theme" data-xsm-items="1:10" data-sm-items="1:10"
-                        data-md-items="1:10" data-lg-items="1:10" data-xlg-items="1:10" data-rewind="1"
-                        data-autoplay="0" data-loop="0" data-lazyload="0" data-mousedrag="1" data-touchdrag="1"
-                        data-smartspeed="500" data-autoplayspeed="3500" data-dots="1" data-nav="0"
-                        data-navtext="<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-left' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='5' y1='12' x2='9' y2='16' /><line x1='5' y1='12' x2='9' y2='8' /></svg>|<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-right' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='15' y1='16' x2='19' y2='12' /><line x1='15' y1='8' x2='19' y2='12' /></svg>"
-                        data-navcontainer=".feedback-partner">
-                        <?php if(!empty($feedback)) {
-                foreach($feedback as $v){?>
-                        <div class="feedback__item">
-                            <div class="feedback__img scale-img effect10">
-                                <?= $func->getImage(['class' => 'lazy', 'sizes' => '220x220x1', 'upload' => UPLOAD_NEWS_L, 'image' => $v['photo'], 'alt' => $v['name'.$lang]]) ?>
-                            </div>
-                            <div class="feedback__content">
-                                <div class="feedback__name">
-                                    <span><?=$v['name'.$lang]?></span>
+                    <div class="danhmucsp__list">
+                        <?php if(!empty($productlist)){
+                            foreach($productlist as $v) {?>
+                        <div class="danhmucsp__item">
+                            <a href="<?=$v[$sluglang]?>" title="<?=$v['name'.$lang]?>">
+                                <div class="danhmucsp__icon">
+                                    <img src="assets/images/images/icon-ul.png" alt="">
                                 </div>
-                                <div class="feedback__desc">
-                                    <span>
-                                        <?=$v['desc'.$lang]?>
-                                    </span>
-                                </div>
-                            </div>
+                                <span class="danhmucsp__name">
+                                    <?=$v['name'.$lang]?>
+                                </span>
+                            </a>
                         </div>
                         <?php }}?>
                     </div>
                 </div>
+                <div class="support">
+                    <div class="danhmucsp__heading">
+                        <span>Hỗ trợ trực tuyến</span>
+                    </div>
+                    <div class="support__content">
+                        <div class="support__top">
+                            <div class="support__avt">
+                                <?= $func->getImage(['class' => 'lazy', 'sizes' => '110x110x1', 'upload' => UPLOAD_NEWS_L, 'image' => $support[0]['photo'], 'alt' => $support[0]['name'.$lang]]) ?>
+                            </div>
+                            <div class="support__tuvan">
+                                <span class="support__tuvan--top">
+                                    tư vấn
+                                </span>
+                                <span class="support__tuvan--bottom">
+                                    24/7
+                                </span>
+                            </div>
+                        </div>
+                        <div class="support--content">
+                            <?=htmlspecialchars_decode($support[0]['desc'.$lang])?>
+                        </div>
+                    </div>
+                </div>
             </div>
-
+            <div class="productlist__nb">
+                <?php foreach($productlistnb as $list) {
+            $sanpham = $d->rawQuery("select name$lang, slugvi, slugen,photo, id from #_product where id_list = ? and find_in_set('noibat',status) and find_in_set('hienthi',status) order by numb,id desc",array($list['id'])); 
+            ?>
+                <!--Bắt đầu danh sách sản phẩm c1 nb -->
+                <div class="pro__listnb">
+                    <div class="pro__listnb__heading">
+                        <div class="prolistnb__name">
+                            <span><?=$list['name'.$lang]?></span>
+                        </div>
+                    </div>
+                    <div class="productlistnb__list">
+                        <?php if(count($sanpham) >= 6) {?>
+                        <?php for ($i=0; $i < 6; $i++) {?>
+                        <?php if(!empty($sanpham[$i])){?>
+                        <div class="productt">
+                            <a class="product__item text-decoration-none" href="<?= $sanpham[$i][$sluglang] ?>"
+                                title="<?= $sanpham[$i]['name' . $lang] ?>">
+                                <div class="product__img">
+                                    <div class="hover_sang scale-img">
+                                        <?= $func->getImage(['sizes' => '280x220x1', 'isWatermark' => true, 'prefix' => 'product', 'upload' => UPLOAD_PRODUCT_L, 'image' => $sanpham[$i]['photo'], 'alt' => $sanpham[$i]['name' . $lang]]) ?>
+                                    </div>
+                                </div>
+                                <div class="product-price">
+                                    <h3 class="name-product cut_string1"><?= $sanpham[$i]['name' . $lang] ?></h3>
+                                </div>
+                            </a>
+                        </div>
+                        <?php } ?>
+                        <?php } ?>
+                        <?php } else { ?>
+                        <?php foreach($sanpham as $i) { ?>
+                        <div class="productt">
+                            <a class="product__item text-decoration-none" href="<?= $i[$sluglang] ?>"
+                                title="<?= $i['name' . $lang] ?>">
+                                <div class="product__img">
+                                    <div class="hover_sang scale-img">
+                                        <?= $func->getImage(['sizes' => '280x220x1', 'isWatermark' => true, 'prefix' => 'product', 'upload' => UPLOAD_PRODUCT_L, 'image' => $i['photo'], 'alt' => $i['name' . $lang]]) ?>
+                                    </div>
+                                </div>
+                                <div class="product-price">
+                                    <h3 class="name-product cut_string1"><?= $i['name' . $lang] ?></h3>
+                                </div>
+                            </a>
+                        </div>
+                        <?php } ?>
+                        <?php } ?>
+                    </div>
+                    <?php if (count($sanpham) >= 6) {?>
+                    <div class="sanpham-bottom">
+                        <a href="<?=$list[$sluglang]?>" title="<?=$list['name'.$lang]?>"
+                            class="button button--isi button--text-thick button--text-upper button--size-s"><span>xem
+                                thêm</span></a>
+                    </div>
+                    <?php }?>
+                </div>
+                <!--Kết thúc danh sách sản phẩm c1 nb -->
+                <?php } ?>
+            </div>
         </div>
     </div>
+</div>
+
+<div class="pd">
+    <?php if(!empty($banner)){?>
+    <div class="banner effect10">
+        <?= $func->getImage(['class' => 'lazy', 'sizes' => '1366x734x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $banner['photo'], 'alt' => $setting['name'.$lang]]) ?>
+    </div>
+    <?php }?>
 </div>
 
 <div class="blog pd-b">
     <div class="wrapper">
         <div class="blogg">
-            <div class="heading__top">
-                <span class="heading heading--black">
-                    tin tức & sự kiện
-                </span>
-                <div class="heading__slogan heading__slogan--black">
-                    <div>
-                        <img src="assets/images/images/line-blue.png" alt="<?=$setting['name'.$lang]?>">
-                    </div>
-                    <span>
-                        <?=$slogan['name'.$lang]?>
-                    </span>
-                    <div>
-                        <img src="assets/images/images/line-blue-02.png" alt="<?=$setting['name'.$lang]?>">
-                    </div>
+            <div class="blog__heading">
+                <div>
+                    <img src="assets/images/images/icon-heading-blog.png" alt="">
                 </div>
+                <span>Tin tức mới</span>
+            </div>
+            <div class="slogan__about">
+                <?=$slogan['name'.$lang]?>
             </div>
             <div class="blog__list">
                 <?php if (!empty($newsnb)) { ?>
-                <div class="owl-page owl-carousel owl-theme" data-xsm-items="1:5" data-sm-items="2:5"
-                    data-md-items="3:15" data-lg-items="4:15" data-xlg-items="4:15" data-rewind="1" data-autoplay="0"
+                <div class="owl-page owl-carousel owl-theme" data-xsm-items="3:30" data-sm-items="3:30"
+                    data-md-items="3:30" data-lg-items="3:30" data-xlg-items="3:30" data-rewind="1" data-autoplay="0"
                     data-loop="0" data-lazyload="0" data-mousedrag="1" data-touchdrag="1" data-smartspeed="500"
                     data-autoplayspeed="3500" data-dots="0" data-nav="0"
                     data-navtext="<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-left' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='5' y1='12' x2='9' y2='16' /><line x1='5' y1='12' x2='9' y2='8' /></svg>|<svg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-narrow-right' width='50' height='37' viewBox='0 0 24 24' stroke-width='1' stroke='#ffffff' fill='none' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><line x1='5' y1='12' x2='19' y2='12' /><line x1='15' y1='16' x2='19' y2='12' /><line x1='15' y1='8' x2='19' y2='12' /></svg>"
@@ -208,23 +231,25 @@
                     <?php foreach($newsnb as $v){?>
                     <a href="<?=$v[$sluglang]?>" class="blog__item">
                         <div class="blog__date">
-                            <span class="blog__date--date">
-                                <?=date("d",$v['date_created'])?>
-                            </span>
-                            <span class="blog__date--month">
-                                Th<?=date("m",$v['date_created'])?>
+                            <div class="blog__date--icon">
+
+                            </div>
+                            <span class="blog__date--day">
+                                Ngày <?=date("d/m/Y",$v['date_created'])?>
                             </span>
                         </div>
                         <div class="blog__img effect10">
-                            <?= $func->getImage(['class' => 'lazy w-100', 'sizes' => '270x270x1', 'upload' => UPLOAD_NEWS_L, 'image' => $v['photo'], 'alt' => $v['name'.$lang]]) ?>
+                            <?= $func->getImage(['class' => 'lazy w-100', 'sizes' => '380x280x1', 'upload' => UPLOAD_NEWS_L, 'image' => $v['photo'], 'alt' => $v['name'.$lang]]) ?>
                         </div>
                         <div class="blog__content">
                             <span class="blog__name">
                                 <?=$v['name'.$lang]?>
                             </span>
-                            <div class="line__blog"></div>
                             <span class="blog__desc">
                                 <?=$v['desc'.$lang]?>
+                            </span>
+                            <span class="blog__xemthem">
+                                Xem Thêm
                             </span>
                         </div>
                     </a>

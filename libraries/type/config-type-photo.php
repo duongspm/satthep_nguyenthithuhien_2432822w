@@ -10,14 +10,14 @@
     $config['photo']['photo_static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif';
     
     /* Banner */
-    // $nametype = "banner";
-    // $config['photo']['photo_static'][$nametype]['title_main'] = "Banner";
-    // $config['photo']['photo_static'][$nametype]['check'] = array("hienthi" => "Hiển thị");
-    // $config['photo']['photo_static'][$nametype]['images'] = true;
-    // $config['photo']['photo_static'][$nametype]['width'] = 1366;
-    // $config['photo']['photo_static'][$nametype]['height'] = 400;
-    // $config['photo']['photo_static'][$nametype]['thumb'] = '1366x400x1';
-    // $config['photo']['photo_static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif';
+    $nametype = "banner";
+    $config['photo']['photo_static'][$nametype]['title_main'] = "Banner";
+    $config['photo']['photo_static'][$nametype]['check'] = array("hienthi" => "Hiển thị");
+    $config['photo']['photo_static'][$nametype]['images'] = true;
+    $config['photo']['photo_static'][$nametype]['width'] = 1366;
+    $config['photo']['photo_static'][$nametype]['height'] = 734;
+    $config['photo']['photo_static'][$nametype]['thumb'] = '1366x734x1';
+    $config['photo']['photo_static'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif';
 
     /* Logo */
     $nametype = "logo";

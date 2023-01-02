@@ -95,19 +95,24 @@ $requick = array(
 	array("tbl" => "product_list", "field" => "idl", "source" => "product", "com" => "san-pham", "type" => "san-pham"),
 	array("tbl" => "product", "field" => "id", "source" => "product", "com" => "san-pham", "type" => "san-pham", "menu" => true),
 
+	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "cong-trinh", "type" => "cong-trinh", "menu" => true),
+
+	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "cham-soc-khach-hang", "type" => "cham-soc-khach-hang", "menu" => true),
+
 	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc", "menu" => true),
 
 	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "dich-vu", "type" => "dich-vu", "menu" => true),
 	
-	array("tbl" => "news_list", "field" => "idl", "source" => "news", "com" => "dich-vu", "type" => "dich-vu", "menu" => true),
-
 	/* Trang tĩnh */
 	array("tbl" => "static", "field" => "id", "source" => "static", "com" => "gioi-thieu", "type" => "gioi-thieu", "menu" => true),
 
 	/* Liên hệ */
 	array("tbl" => "", "field" => "id", "source" => "", "com" => "lien-he", "type" => "", "menu" => true),
 
+	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "chinh-sach", "type" => "chinh-sach", "menu" => false),
 	
+	array("tbl" => "news", "field" => "id", "source" => "news", "com" => "tieu-chi", "type" => "tieu-chi", "menu" => false),
+
 );
 
 /* Find data */
@@ -180,6 +185,22 @@ switch ($com) {
 		$titleMain = timkiem;
 		break;
 
+	case 'chinh-sach':
+		$source = "news";
+		$template = isset($_GET['id']) ? "news/news_detail" : "";
+		$seo->set('type', 'article');
+		$type = $com;
+		$titleMain = null;
+		break;
+
+	case 'tieu-chi':
+		$source = "news";
+		$template = isset($_GET['id']) ? "news/news_detail" : "";
+		$seo->set('type', 'article');
+		$type = $com;
+		$titleMain = null;
+		break;
+		
 	case 'tags-san-pham':
 		$source = "tags";
 		$template = "product/product";
