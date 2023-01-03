@@ -13,7 +13,7 @@
     $config['product'][$nametype]['show_images'] = true;
     $config['product'][$nametype]['desc'] = true;
     $config['product'][$nametype]['desc_cke'] = true;
-    $config['product'][$nametype]['regular_price'] = true;
+    $config['product'][$nametype]['regular_price'] = false;
     $config['product'][$nametype]['schema'] = true;
     $config['product'][$nametype]['content'] = true;
     $config['product'][$nametype]['content_cke'] = true;

@@ -1,17 +1,18 @@
 <div class="title-main"><span>Sản phẩm</span></div>
 <div class="content-main w-clear">
-    <div class="row">
-        <div class="productlistss">
+    <div class="">
+        <div class="productlistnb__list">
             <?php if(!empty($product)) { foreach($product as $k => $v) { ?>
-            <div class="product">
-                <a class="box-product text-decoration-none" href="<?=$v[$sluglang]?>" title="<?=$v['name'.$lang]?>">
-                    <p class="pic-product scale-img hover_sang">
-                        <?=$func->getImage(['sizes' => '336x290x1', 'isWatermark' => true, 'prefix' => 'product', 'upload' => UPLOAD_PRODUCT_L, 'image' => $v['photo'], 'alt' => $v['name'.$lang]])?>
-                    </p>
-                    <h3 class="name-product text-split"><?=$v['name'.$lang]?></h3>
-                    <p class="price-product">
-                        <span class="price-new"><?=lienhe?></span>
-                    </p>
+            <div class="productt">
+                <a class="product__item text-decoration-none" href="<?=$v[$sluglang]?>" title="<?=$v['name'.$lang]?>">
+                    <div class="product__img">
+                        <div class="hover_sang scale-img">
+                            <?=$func->getImage(['sizes' => '280x220x1', 'isWatermark' => true, 'prefix' => 'product', 'upload' => UPLOAD_PRODUCT_L, 'image' => $v['photo'], 'alt' => $v['name'.$lang]])?>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <h3 class="name-product cut_string1"><?= $v['name' . $lang] ?></h3>
+                    </div>
                 </a>
             </div>
             <?php } } else { ?>

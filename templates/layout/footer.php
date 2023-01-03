@@ -1,78 +1,122 @@
-<div class="footer">
+<div class="footer pd-top">
     <div class="wrapper">
-        <div class="footerr">
-            <div class="footer-item">
-                <div class="footer-name">
-                    <span><?=$footer['name'.$lang]?></span>
-                </div>
-                <div class="footer-info"><?= htmlspecialchars_decode($footer['content' . $lang]) ?></div>
-            </div>
-            <div class="footer-item">
+        <div class="footer__top">
+            <div class="footer-item footer__top--left">
                 <div class="footer-title">
-                    <span>Chính sách</span>
-                    <div class="footer_line">
-                        <img src="assets/images/images/ft-line.png" alt="<?=$setting['name'.$lang]?>">
-                    </div>
+                    <span>Về chúng tôi</span>
                 </div>
-                <div class="footer__list">
-                    <?php if(!empty($policy)){?>
-                    <ul>
-                        <?php foreach($policy as $v){?>
-                        <li><a href="<?=$v[$sluglang]?>" title="<?=$v['name'.$lang]?>"><?=$v['name'.$lang]?></a></li>
-                        <?php }?>
-                    </ul>
-                    <?php }?>
+                <div class="footer-info">
+                    <span class="footer__slogan">
+                        <?=$slogan['name'.$lang]?>
+                    </span>
                 </div>
                 <div class="footer-social">
-                    <?php if(!empty($social)){foreach($social as $v){?>
+                    <?php if(!empty($socialfooter)){foreach($socialfooter as $v){?>
                     <a class="social-item" href="<?=$v['link']?>">
-                        <?=$func->getImage(['class' => '', 'sizes' => '40x40x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $v['photo'], 'alt' => $setting['name'.$lang]])?>
+                        <?=$func->getImage(['class' => '', 'sizes' => '42x42x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $v['photo'], 'alt' => $setting['name'.$lang]])?>
                     </a>
                     <?php }}?>
 
                 </div>
             </div>
-            <div class="footer-item">
-                <div class="footer-fb">
-                    <div class="fb-page" data-href="<?=$optsetting['fanpage']?>" data-tabs="timeline" data-width="500"
-                        data-height="230" data-small-header="true" data-adapt-container-width="true"
-                        data-hide-cover="false" data-show-facepile="true">
-                        <div class="fb-xfbml-parse-ignore">
-                            <blockquote cite="<?=$optsetting['fanpage']?>">
-                                <a href="<?=$optsetting['fanpage']?>">Facebook</a>
-                            </blockquote>
+            <div class="footer-item footer__top--middle">
+                <div class="footer-title">
+                    <span>
+                        <?=$tknh['name'.$lang]?>
+                    </span>
+                </div>
+                <div class="footer-info">
+                    <span>
+                        <?= htmlspecialchars_decode($tknh['desc' . $lang]) ?>
+                    </span>
+                </div>
+                <div class="footer__map">
+                    <a href="lien-he">
+                        <div class="footer__map--icon">
+                            <img src="assets/images/images/icon-map.png" alt="">
                         </div>
-                    </div>
+                        <span>Xem bản đồ</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-item footer__top--right">
+                <div class="footer-title">
+                    <span>
+                        thông tin liên hệ
+                    </span>
+                </div>
+                <div class="footer-info">
+                    <?= htmlspecialchars_decode($footer['content' . $lang]) ?>
                 </div>
             </div>
         </div>
-        <div class="footer__tag mr-bottom mr-top">
-            <span>tag từ khóa: </span>
-            <?php if(!empty($tag)){
-                foreach($tag as $v){?>
-
-            <a class="tag__item" href="<?=$v['desc'.$lang]?>" title="<?=$v['name'.$lang]?>">
-                <?=$v['name'.$lang]?>
-            </a>
-
-            <?php }}?>
-        </div>
-    </div>
-    <div class="copyright">
-        <div class="wrapper copyrightt">
-            <div class="copyright-left">
-                <span>Copyright © 2022
-                    <span class="settingname">
-                        <?=$setting['name'.$lang]?>
-                    </span>. Design by Nina Co.,Ltd
+        <div class="footer__middle pd">
+            <div class="footer__middle__item">
+                <span class="footer__middle--name">
+                    Sản phẩm
                 </span>
+                <?php if(!empty($productnb)){?>
+                <div class="footer__middle--list">
+                    <?php for ($i=0; $i < 6; $i++){ if(!empty($productnb[$i])){?>
+                    <a class="text-decoration-none" href="<?=$productnb[$i][$sluglang]?>"
+                        title="<?=$productnb[$i]['name'.$lang]?>"><?=$productnb[$i]['name'.$lang]?></a>
+                    <?php }}?>
+                </div>
+                <?php }?>
+            </div>
+            <div class="footer__middle__item">
+                <span class="footer__middle--name">
+                    công trình
+                </span>
+                <?php if(!empty($congtrinh)){?>
+                <div class="footer__middle--list">
+                    <?php foreach($congtrinh as $v){?>
+                    <a class="text-decoration-none" href="<?=$v[$sluglang]?>"
+                        title="<?=$v['name'.$lang]?>"><?=$v['name'.$lang]?></a>
+                    <?php }?>
+                </div>
+                <?php }?>
+            </div>
+            <div class="footer__middle__item">
+                <span class="footer__middle--name">
+                    Chính sách hoạt động
+                </span>
+                <?php if(!empty($policy)){?>
+                <div class="footer__middle--list">
+                    <?php foreach($policy as $v){?>
+                    <a class="text-decoration-none" href="<?=$v[$sluglang]?>"
+                        title="<?=$v['name'.$lang]?>"><?=$v['name'.$lang]?></a>
+                    <?php }?>
+                </div>
+                <?php }?>
+            </div>
+            <div class="footer__middle__item">
+                <span class="footer__middle--name">
+                    chăm sóc khách hàng
+                </span>
+                <?php if(!empty($cskh)){?>
+                <div class="footer__middle--list">
+                    <?php foreach($cskh as $v){?>
+                    <a class="text-decoration-none" href="<?=$v[$sluglang]?>"
+                        title="<?=$v['name'.$lang]?>"><?=$v['name'.$lang]?></a>
+                    <?php }?>
+                </div>
+                <?php }?>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="wrapper copyrightt">
+                <div class="copyright-left">
+                    <span>2022 Bản Quyền ©
+                        <span class="settingname">
+                            <?=$setting['name'.$lang]?>
+                        </span>. All rights reserved. Design by NINA Co.,Ltd
+                    </span>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<?php if (!empty($optsetting['coords_iframe'])){?>
-<?= $addons->set('footer-map', 'footer-map', 6); ?>
-<?php }?>
 <?= $addons->set('messages-facebook', 'messages-facebook', 2); ?>
 
 <a class="btn-zalo btn-frame text-decoration-none" target="_blank"

@@ -162,6 +162,23 @@ switch ($com) {
 		$titleMain = "Tin tức";
 		break;
 
+		case 'cong-trinh':
+			$source = "news";
+			$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+			$seo->set('type', isset($_GET['id']) ? "article" : "object");
+			$type = $com;
+			$titleMain = "Công trình";
+			break;
+			
+			case 'cham-soc-khach-hang':
+				$source = "news";
+				$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+				$seo->set('type', isset($_GET['id']) ? "article" : "object");
+				$type = $com;
+				$titleMain = "Chăm sóc khách hàng";
+				break;
+			
+
 	case 'dich-vu':
 		$source = "news";
 		$template = isset($_GET['id']) ? "news/news_detail" : "news/dichvu";

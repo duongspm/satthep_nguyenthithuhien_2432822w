@@ -50,5 +50,7 @@
             <input type="reset" class="btn btn-secondary" value="<?=nhaplai?>" />
             <input type="hidden" name="recaptcha_response_contact" id="recaptchaResponseContact">
         </form>
+
+        <div class="map__contact col-12"><?=htmlspecialchars_decode($optsetting['coords_iframe'])?></div>
     </div>
 </div>

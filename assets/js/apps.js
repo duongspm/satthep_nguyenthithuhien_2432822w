@@ -47,7 +47,43 @@ NN_FRAMEWORK.GoTop = function(){
     });
 
 };
+NN_FRAMEWORK.clickMap = function () {
+    if (isExist($(".more_quick"))) {
 
+        //$('body').on("click", ".more_quick", function() {
+        $(".more_quick").click(function() {
+    
+            if ($(".show_ajax_mq").hasClass("hidden")) {
+                $(".show_ajax_mq").removeClass("hidden");
+            } else {
+                $(".show_ajax_mq").addClass("hidden");
+            }
+    
+            var tab = $(this).data('tab');
+    
+            $.ajax({
+                url: 'api/ggmap.php',
+                type: "POST",
+                dataType: 'html',
+                data: {
+                    tab: tab
+                },
+                success: function(result) {
+                    if (result != '') {
+    
+                        $('.show_ajax_mq').html(result);
+                    }
+                }
+            });
+    
+        });
+    
+        $('body').on("click", ".close_white", function() {
+            $(".show_ajax_mq").addClass("hidden");
+    
+        });
+    }
+};
 /* Paging dịch vụ ajax list*/
 NN_FRAMEWORK.loadPagingListService = function () {
     loadPaging("api/service.php?perpage=8", ".paging-service-list", 0);
@@ -842,6 +878,7 @@ $(document).ready(function(){
     NN_FRAMEWORK.countNumber();
     NN_FRAMEWORK.Lazys();
     NN_FRAMEWORK.Tools();
+    // NN_FRAMEWORK.clickMap();
     NN_FRAMEWORK.Popup();
     NN_FRAMEWORK.Wows();
     NN_FRAMEWORK.AltImg();
